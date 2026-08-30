@@ -1,0 +1,108 @@
+{
+  "dataset_rows_analyzed": 200000,
+  "attack_messages": 28649,
+  "process_results": {
+    "can_analyzer": {
+      "pid": 914,
+      "total_messages": 100000,
+      "unique_can_ids": 1596,
+      "top_can_ids": {
+        "790": 8666,
+        "1087": 8392,
+        "399": 4847,
+        "304": 4791,
+        "2": 4771,
+        "339": 4746,
+        "608": 4704,
+        "672": 4675,
+        "880": 4646,
+        "704": 4613
+      },
+      "avg_seq_spacing": 1.0,
+      "elapsed_sec": 0.7356321811676025,
+      "cpu_percent": 0.0,
+      "memory_mb": 240.6328125
+    },
+    "attack_detector": {
+      "pid": 922,
+      "total_messages": 100000,
+      "normal_messages": 85830,
+      "attack_messages": 14170,
+      "attack_ratio": 0.1417,
+      "threat_level": "HIGH",
+      "attack_breakdown": {
+        "RPM": 3965,
+        "gear": 3642,
+        "DoS": 3541,
+        "Fuzzy": 3022
+      },
+      "nice_before": 0,
+      "nice_after": -10,
+      "elapsed_sec": 0.7457501888275146,
+      "cpu_percent": 0.0,
+      "memory_mb": 240.44921875
+    }
+  },
+  "process_status": {
+    "910": {
+      "name": "Resource Monitor",
+      "status": "TERMINATED",
+      "priority": "MEDIUM"
+    },
+    "911": {
+      "name": "Event Logger",
+      "status": "TERMINATED",
+      "priority": "MEDIUM"
+    },
+    "914": {
+      "name": "CAN Analyzer",
+      "status": "TERMINATED",
+      "priority": "HIGH"
+    },
+    "922": {
+      "name": "Attack Detector",
+      "status": "TERMINATED",
+      "priority": "HIGH"
+    }
+  },
+  "sequential_time_sec": 0.4797663688659668,
+  "concurrent_time_sec": 1.2338924407958984,
+  "speedup": 0.3888234930400439,
+  "memory_experiment": {
+    "method_a_full_load": {
+      "before_mb": 241.51953125,
+      "during_mb": 347.29296875,
+      "after_mb": 232.2265625,
+      "elapsed_sec": 0.46776843070983887
+    },
+    "method_b_chunked": {
+      "before_mb": 232.2265625,
+      "peak_mb": 247.42578125,
+      "after_mb": 247.42578125,
+      "elapsed_sec": 0.4651172161102295,
+      "total_rows": 818440
+    }
+  },
+  "synchronization_experiment": {
+    "workers": 4,
+    "increments_per_worker": 2000,
+    "expected_total": 8000,
+    "unsafe_result_no_lock": 2110,
+    "unsafe_lost_updates": 5890,
+    "safe_result_with_lock": 8000,
+    "safe_correct": true
+  },
+  "deadlock_experiment": {
+    "phase1_deadlock_detected": true,
+    "phase1": {
+      "B_timed_out": true,
+      "A_timed_out": true,
+      "wall_time_sec": 2.6009082794189453
+    },
+    "phase2": {
+      "wall_time_sec": 0.10065698623657227,
+      "both_completed": true,
+      "policy": "acquire Resource A before Resource B (consistent global order)"
+    }
+  }
+}
